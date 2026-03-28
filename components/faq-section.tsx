@@ -40,7 +40,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="bg-background py-24">
+    <section id="faq" className="bg-secondary py-24">
       <div className="mx-auto max-w-3xl px-4 lg:px-8">
         <div className="text-center">
           <span className="text-sm font-semibold uppercase tracking-widest text-primary">

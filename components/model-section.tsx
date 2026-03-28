@@ -84,7 +84,7 @@ export function ModelSection() {
                 className="object-cover"
               />
             </div>
-            <div className="col-span-2 bg-emerald-600 rounded-md p-4 md:p-6 text-center text-white">
+            <div className="col-span-2 bg-primary rounded-md p-4 md:p-6 text-center text-primary-foreground">
               <div className="text-3xl md:text-4xl font-bold mb-1">100%</div>
               <div className="text-base md:text-lg font-semibold mb-3">
                 Personalizável

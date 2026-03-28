@@ -37,7 +37,7 @@ export function AboutSection() {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-gradient-to-br from-primary to-emerald-400 p-6 text-primary-foreground lg:block shadow-xl transition-transform duration-300 hover:scale-110 hover:rotate-2">
+            <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-primary p-6 text-primary-foreground lg:block shadow-xl transition-transform duration-300 hover:scale-110 hover:rotate-2">
               <span className="font-display text-4xl font-bold">10+</span>
               <p className="text-sm font-medium text-primary-foreground/90">
                 Anos no mercado
@@ -71,7 +71,7 @@ export function AboutSection() {
             <div className="mt-10 grid gap-6 sm:grid-cols-3">
               {values.map((value, index) => (
                 <div key={value.title} className="flex flex-col gap-3 group animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-emerald-400/10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-emerald-400">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary">
                     <value.icon className="h-6 w-6 text-primary transition-colors group-hover:text-primary-foreground" />
                   </div>
                   <h3 className="font-display text-lg font-semibold text-foreground group-hover:text-primary transition-colors">

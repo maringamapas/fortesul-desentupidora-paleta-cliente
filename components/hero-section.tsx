@@ -29,7 +29,7 @@ export function HeroSection() {
             <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl animate-slide-up">
               <span className="text-balance">
                 {SITE_CONFIG.hero.title.split(SITE_CONFIG.hero.highlight)[0]}
-                <span className="text-primary bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">{SITE_CONFIG.hero.highlight}</span>
+                <span className="text-primary">{SITE_CONFIG.hero.highlight}</span>
               </span>
             </h1>
 
@@ -45,7 +45,7 @@ export function HeroSection() {
               >
                 <Button
                   size="lg"
-                  className="gap-2 bg-gradient-to-r from-primary to-emerald-400 px-8 text-primary-foreground hover:scale-105 hover:shadow-xl transition-all duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  className="gap-2 bg-primary px-8 text-primary-foreground hover:bg-primary/90 hover:scale-105 hover:shadow-xl transition-all duration-300 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 >
                   <Phone className="h-5 w-5" />
                   {SITE_CONFIG.hero.ctaText}
@@ -63,7 +63,7 @@ export function HeroSection() {
 
             <div className="mt-12 flex items-center gap-8 border-t border-primary-foreground/10 pt-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <div className="transition-transform duration-300 hover:scale-110">
-                <span className="font-display text-3xl font-bold text-primary bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
+                <span className="font-display text-3xl font-bold text-primary">
                   {SITE_CONFIG.hero.stats.experience.value}
                 </span>
                 <p className="text-sm text-primary-foreground/70">
@@ -72,7 +72,7 @@ export function HeroSection() {
               </div>
               <div className="h-10 w-px bg-primary-foreground/20" />
               <div className="transition-transform duration-300 hover:scale-110">
-                <span className="font-display text-3xl font-bold text-primary bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
+                <span className="font-display text-3xl font-bold text-primary">
                   {SITE_CONFIG.hero.stats.projects.value}
                 </span>
                 <p className="text-sm text-primary-foreground/70">

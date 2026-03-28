@@ -82,7 +82,7 @@ export function Section2() {
             <div className="space-y-4">
               <div className="flex gap-3 group animate-slide-up" style={{ animationDelay: '0.1s' }}>
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-orange-400/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:from-primary group-hover:to-orange-400">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary">
                     <Monitor className="w-5 h-5 text-primary transition-colors group-hover:text-primary-foreground" />
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export function Section2() {
               
               <div className="flex gap-3 group animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-orange-400/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:from-primary group-hover:to-orange-400">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary">
                     <Smartphone className="w-5 h-5 text-primary transition-colors group-hover:text-primary-foreground" />
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export function Section2() {
               
               <div className="flex gap-3 group animate-slide-up" style={{ animationDelay: '0.3s' }}>
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-orange-400/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:from-primary group-hover:to-orange-400">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary">
                     <Globe className="w-5 h-5 text-primary transition-colors group-hover:text-primary-foreground" />
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export function Section2() {
               
               <div className="flex gap-3 group animate-slide-up" style={{ animationDelay: '0.4s' }}>
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-orange-400/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:from-primary group-hover:to-orange-400">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary">
                     <MessageCircle className="w-5 h-5 text-primary transition-colors group-hover:text-primary-foreground" />
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export function Section2() {
               
               <div className="flex gap-3 group animate-slide-up" style={{ animationDelay: '0.5s' }}>
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-orange-400/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:from-primary group-hover:to-orange-400">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary">
                     <Users className="w-5 h-5 text-primary transition-colors group-hover:text-primary-foreground" />
                   </div>
                 </div>
@@ -142,7 +142,7 @@ export function Section2() {
               
               <div className="flex gap-3 group animate-slide-up" style={{ animationDelay: '0.6s' }}>
                 <div className="flex-shrink-0">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-orange-400/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:from-primary group-hover:to-orange-400">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-primary">
                     <Zap className="w-5 h-5 text-primary transition-colors group-hover:text-primary-foreground" />
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export function Section2() {
               href="https://wa.me/5544999324635?text=Quero%20um%20site%20assim!"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-orange-400 hover:from-orange-400 hover:to-primary text-primary-foreground font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
               <MessageCircle className="w-5 h-5" />
               Quero um site assim!

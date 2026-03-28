@@ -63,8 +63,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        display: ['var(--font-archivo)', 'sans-serif'],
+        sans: ['var(--font-open-sans)', 'sans-serif'],
+        display: ['var(--font-montserrat)', 'sans-serif'],
       },
       borderRadius: {
         lg: 'var(--radius)',

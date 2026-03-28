@@ -31,7 +31,7 @@ export function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-accent/98 backdrop-blur-lg shadow-2xl"
+          ? "bg-primary/98 backdrop-blur-lg shadow-2xl"
           : "bg-transparent"
       }`}
     >
@@ -52,7 +52,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-all duration-300 hover:text-primary hover:bg-primary/10 hover:scale-105"
+                className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-all duration-300 hover:text-secondary hover:bg-primary-foreground/10 hover:scale-105"
               >
                 {link.label}
               </a>
@@ -65,7 +65,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+              <Button className="gap-2 bg-secondary text-foreground hover:bg-secondary/90 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
                 <Phone className="h-4 w-4" />
                 {SITE_CONFIG.nav.ctaText}
               </Button>
@@ -86,13 +86,13 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="bg-accent/98 backdrop-blur-lg shadow-2xl lg:hidden animate-slide-up" id="mobile-menu">
+        <div className="bg-primary/98 backdrop-blur-lg shadow-2xl lg:hidden animate-slide-up" id="mobile-menu">
           <nav className="flex flex-col px-4 pb-6" role="navigation" aria-label="Menu principal mobile">
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="border-b border-accent-foreground/10 py-4 text-sm font-medium text-primary-foreground/80 transition-all duration-300 hover:text-primary hover:pl-2"
+                className="border-b border-primary-foreground/10 py-4 text-sm font-medium text-primary-foreground/80 transition-all duration-300 hover:text-secondary hover:pl-2"
                 onClick={() => setIsOpen(false)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
@@ -105,7 +105,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="mt-4"
             >
-              <Button className="w-full gap-2 bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+              <Button className="w-full gap-2 bg-secondary text-foreground hover:bg-secondary/90 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2">
                 <Phone className="h-4 w-4" />
                 {SITE_CONFIG.nav.ctaText}
               </Button>

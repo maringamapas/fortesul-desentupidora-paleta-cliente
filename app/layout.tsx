@@ -1,18 +1,20 @@
 import React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Archivo } from "next/font/google"
+import { Montserrat, Open_Sans } from "next/font/google"
 import { SITE_CONFIG } from "@/src/config/site-config"
 
 import "./globals.css"
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700", "800"],
 })
 
-const archivo = Archivo({
+const openSans = Open_Sans({
   subsets: ["latin"],
-  variable: "--font-archivo",
+  variable: "--font-open-sans",
+  weight: ["400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
@@ -70,8 +72,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#10b981' },
-    { media: '(prefers-color-scheme: dark)', color: '#10b981' }
+    { media: '(prefers-color-scheme: light)', color: '#0A6847' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A6847' }
   ],
   width: 'device-width',
   initialScale: 1,
@@ -94,7 +96,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Fortesul" />
       </head>
       <body
-        className={`${inter.variable} ${archivo.variable} font-sans antialiased`}
+        className={`${openSans.variable} ${montserrat.variable} font-sans antialiased`}
       >
         {children}
       </body>

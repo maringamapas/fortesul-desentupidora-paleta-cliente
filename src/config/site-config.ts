@@ -8,12 +8,14 @@ export const SITE_CONFIG = {
     description: "Locação de banheiros químicos, limpeza de fossa e desentupimento em Palhoça e região. Atendimento especializado 24h.",
   },
 
-  // Identidade Visual (Cores)
+  // Identidade Visual (Cores) - Forte Sul Palette
   theme: {
     colors: {
-      primary: "#10b981",    // Cor principal (verde - transmite limpeza e confiança)
-      secondary: "#1e293b",  // Cor secundária (cinza escuro)
-      accent: "#0f172a",     // Cor de destaque (azul escuro/preto)
+      primary: "#0A6847",    // Cor principal (verde escuro - transmite confiança e profissionalismo)
+      secondary: "#F5F5DC",  // Cor secundária (creme - seções alternadas)
+      accent: "#0A6847",     // Cor de destaque (verde escuro)
+      background: "#FFFFFF", // Fundo principal (branco)
+      text: "#333333",       // Texto do corpo (cinza escuro)
     },
     borderRadius: "0.5rem",
   },

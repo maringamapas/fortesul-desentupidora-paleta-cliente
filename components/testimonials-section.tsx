@@ -53,18 +53,18 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="depoimentos" className="bg-accent py-24">
+    <section id="depoimentos" className="bg-primary py-24">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center">
-          <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+          <span className="text-sm font-semibold uppercase tracking-widest text-secondary">
             Depoimentos
           </span>
-          <h2 className="mt-3 font-display text-3xl font-bold text-accent-foreground md:text-4xl">
+          <h2 className="mt-3 font-display text-3xl font-bold text-primary-foreground md:text-4xl">
             <span className="text-balance">
               O que nossos clientes dizem
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-accent-foreground/60">
+          <p className="mx-auto mt-4 max-w-2xl text-primary-foreground/70">
             A satisfação dos nossos clientes é nossa maior recompensa.
           </p>
         </div>
@@ -73,7 +73,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className="rounded-2xl bg-[#2a2420] p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 animate-slide-up"
+              className="rounded-2xl bg-background p-8 transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start gap-4 mb-6">
@@ -83,10 +83,10 @@ export function TestimonialsSection() {
                   className="w-16 h-16 rounded-full object-cover border-4 border-primary/20"
                 />
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-white mb-1">
+                  <h3 className="text-lg font-semibold text-foreground mb-1">
                     {testimonial.name}
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     {testimonial.role}
                   </p>
                 </div>
@@ -96,12 +96,12 @@ export function TestimonialsSection() {
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
                   <Star
                     key={`star-${testimonial.name}-${i}`}
-                    className="h-5 w-5 fill-yellow-400 text-yellow-400"
+                    className="h-5 w-5 fill-primary text-primary"
                   />
                 ))}
               </div>
               
-              <blockquote className="text-white leading-relaxed">
+              <blockquote className="text-foreground leading-relaxed">
                 {`"${testimonial.content}"`}
               </blockquote>
             </div>
