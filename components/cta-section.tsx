@@ -14,10 +14,9 @@ export function CTASection() {
         className="object-cover object-center"
         priority={false}
       />
-      {/* CTA Overlay Background */}
+      {/* CTA Overlay Background - Forte Sul Primary */}
       <div 
-        className="absolute inset-0"
-        style={{ backgroundColor: 'rgb(0 88 64 / 0.85)' }}
+        className="absolute inset-0 bg-primary/90"
       />
       <div className="relative mx-auto max-w-4xl px-4 text-center lg:px-8">
         <h2 className="font-display text-3xl font-bold text-primary-foreground md:text-5xl animate-slide-up">
@@ -37,7 +36,7 @@ export function CTASection() {
           >
             <Button
               size="lg"
-              className="gap-2 bg-accent px-10 text-lg text-accent-foreground hover:bg-accent/90 hover:scale-110 hover:shadow-2xl transition-all duration-500 rounded-full focus-visible:ring-2 focus-visible:ring-accent-foreground focus-visible:ring-offset-2 scale-100"
+              className="gap-2 bg-secondary px-10 text-lg text-foreground hover:bg-secondary/90 hover:scale-110 hover:shadow-2xl transition-all duration-500 rounded-full focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 scale-100"
             >
               <MessageCircle className="h-5 w-5" />
               {SITE_CONFIG.cta.primaryButton}

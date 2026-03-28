@@ -11,6 +11,7 @@ const navLinks = SITE_CONFIG.nav.links
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [currentSection, setCurrentSection] = useState("inicio")
 
   useEffect(() => {
     let ticking = false
@@ -18,6 +19,20 @@ export function Header() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           setScrolled(window.scrollY > 20)
+          
+          // Detectar seção atual baseado na posição do scroll
+          const sections = ["inicio", "sobre", "servicos", "diferenciais", "depoimentos", "faq", "galeria-fotos"]
+          
+          for (const section of sections) {
+            const element = document.getElementById(section)
+            if (element) {
+              const rect = element.getBoundingClientRect()
+              if (rect.top <= 100) {
+                setCurrentSection(section)
+              }
+            }
+          }
+          
           ticking = false
         })
         ticking = true
@@ -27,13 +42,81 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Determinar cores do header baseado na seção atual e estado de scroll
+  const getHeaderClasses = () => {
+    if (!scrolled) {
+      return "bg-transparent"
+    }
+
+    // Seções com fundo claro (branco ou creme) - header precisa ser escuro
+    const lightSections = ["sobre", "diferenciais"]
+    if (lightSections.includes(currentSection)) {
+      return "bg-background/95 backdrop-blur-lg shadow-2xl"
+    }
+
+    // Seções com fundo escuro (verde) ou imagem - header precisa ser claro
+    return "bg-primary/98 backdrop-blur-lg shadow-2xl"
+  }
+
+  // Determinar cor do texto baseado no fundo
+  const getTextClasses = () => {
+    if (!scrolled) {
+      return "text-primary-foreground/80"
+    }
+
+    const lightSections = ["sobre", "diferenciais"]
+    if (lightSections.includes(currentSection)) {
+      return "text-foreground/80"
+    }
+
+    return "text-primary-foreground/80"
+  }
+
+  // Cor dos links ao hover
+  const getHoverClasses = () => {
+    if (!scrolled) {
+      return "hover:text-secondary"
+    }
+
+    const lightSections = ["sobre", "diferenciais"]
+    if (lightSections.includes(currentSection)) {
+      return "hover:text-primary"
+    }
+
+    return "hover:text-secondary"
+  }
+
+  // Cor do botão CTA
+  const getButtonClasses = () => {
+    if (!scrolled) {
+      return "bg-secondary text-foreground"
+    }
+
+    const lightSections = ["sobre", "diferenciais"]
+    if (lightSections.includes(currentSection)) {
+      return "bg-primary text-primary-foreground"
+    }
+
+    return "bg-secondary text-foreground"
+  }
+
+  // Cor do ícone do menu mobile
+  const getMenuIconClasses = () => {
+    if (!scrolled) {
+      return "text-primary-foreground"
+    }
+
+    const lightSections = ["sobre", "diferenciais"]
+    if (lightSections.includes(currentSection)) {
+      return "text-foreground"
+    }
+
+    return "text-primary-foreground"
+  }
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-accent/98 backdrop-blur-lg shadow-2xl"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${getHeaderClasses()}`}
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex h-20 items-center justify-between">
@@ -52,7 +135,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-4 py-2.5 text-sm font-medium text-primary-foreground/80 transition-all duration-300 hover:text-primary hover:bg-primary/10 hover:scale-105"
+                className={`rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-300 hover:bg-primary-foreground/10 hover:scale-105 ${getTextClasses()} ${getHoverClasses()}`}
               >
                 {link.label}
               </a>
@@ -65,7 +148,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+              <Button className={`gap-2 ${getButtonClasses()} hover:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2`}>
                 <Phone className="h-4 w-4" />
                 {SITE_CONFIG.nav.ctaText}
               </Button>
@@ -74,7 +157,7 @@ export function Header() {
 
           <button
             type="button"
-            className="rounded-md p-2 text-primary-foreground lg:hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className={`rounded-md p-2 ${getMenuIconClasses()} lg:hidden focus-visible:ring-2 focus-visible:ring-offset-2`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isOpen}
@@ -86,13 +169,13 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="bg-accent/98 backdrop-blur-lg shadow-2xl lg:hidden animate-slide-up" id="mobile-menu">
-          <nav className="flex flex-col px-4 pb-6" role="navigation" aria-label="Menu principal mobile">
+        <div className={`${getHeaderClasses()} lg:hidden animate-slide-up`} id="mobile-menu">
+          <nav className={`flex flex-col px-4 pb-6 border-b ${scrolled && !["sobre", "diferenciais"].includes(currentSection) ? "border-primary-foreground/10" : "border-foreground/10"}`} role="navigation" aria-label="Menu principal mobile">
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="border-b border-accent-foreground/10 py-4 text-sm font-medium text-primary-foreground/80 transition-all duration-300 hover:text-primary hover:pl-2"
+                className={`py-4 text-sm font-medium transition-all duration-300 ${getTextClasses()} ${getHoverClasses()} hover:pl-2`}
                 onClick={() => setIsOpen(false)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
@@ -105,7 +188,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="mt-4"
             >
-              <Button className="w-full gap-2 bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+              <Button className={`w-full gap-2 ${getButtonClasses()} hover:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2`}>
                 <Phone className="h-4 w-4" />
                 {SITE_CONFIG.nav.ctaText}
               </Button>

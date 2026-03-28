@@ -65,7 +65,7 @@ export function ServicesSection() {
               className="group rounded-xl border border-border bg-card p-8 transition-all duration-500 hover:border-primary/50 hover:shadow-2xl hover:scale-105 hover:-translate-y-1 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-emerald-400/10 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-emerald-400 group-hover:scale-110 group-hover:rotate-3">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:rotate-3">
                 <service.icon className="h-7 w-7 text-primary transition-colors group-hover:text-primary-foreground" />
               </div>
               <h3 className="mt-6 font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors">

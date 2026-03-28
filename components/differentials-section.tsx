@@ -54,13 +54,13 @@ export function DifferentialsSection() {
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="flex-shrink-0">
-                <span className="font-display text-5xl font-bold bg-gradient-to-br from-primary/30 to-emerald-400/30 bg-clip-text text-transparent">
+                <span className="font-display text-5xl font-bold text-primary/30">
                   {item.number}
                 </span>
               </div>
               <div>
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-emerald-400/10 transition-all duration-300 hover:scale-110 hover:rotate-3">
-                  <item.icon className="h-5 w-5 text-primary" />
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 transition-all duration-300 hover:scale-110 hover:rotate-3 hover:bg-primary group">
+                  <item.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-foreground hover:text-primary transition-colors">
                   {item.title}
