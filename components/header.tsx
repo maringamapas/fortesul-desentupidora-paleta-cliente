@@ -169,13 +169,13 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className={`${getHeaderClasses()} lg:hidden animate-slide-up`} id="mobile-menu">
-          <nav className={`flex flex-col px-4 pb-6 border-b ${scrolled && !["sobre", "diferenciais"].includes(currentSection) ? "border-primary-foreground/10" : "border-foreground/10"}`} role="navigation" aria-label="Menu principal mobile">
+        <div className="bg-primary shadow-2xl lg:hidden animate-slide-up" id="mobile-menu">
+          <nav className="flex flex-col px-4 pb-6 border-b border-primary-foreground/10" role="navigation" aria-label="Menu principal mobile">
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`py-4 text-sm font-medium transition-all duration-300 ${getTextClasses()} ${getHoverClasses()} hover:pl-2`}
+                className="py-4 text-sm font-medium text-primary-foreground/80 transition-all duration-300 hover:text-secondary hover:pl-2"
                 onClick={() => setIsOpen(false)}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
@@ -188,7 +188,7 @@ export function Header() {
               rel="noopener noreferrer"
               className="mt-4"
             >
-              <Button className={`w-full gap-2 ${getButtonClasses()} hover:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2`}>
+              <Button className="w-full gap-2 bg-secondary text-foreground hover:bg-secondary/90 focus-visible:ring-2 focus-visible:ring-offset-2">
                 <Phone className="h-4 w-4" />
                 {SITE_CONFIG.nav.ctaText}
               </Button>
