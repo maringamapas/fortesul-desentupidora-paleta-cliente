@@ -29,7 +29,7 @@ export function HeroSection() {
             <h1 className="font-display text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl animate-slide-up">
               <span className="text-balance">
                 {SITE_CONFIG.hero.title.split(SITE_CONFIG.hero.highlight)[0]}
-                <span className="text-primary">{SITE_CONFIG.hero.highlight}</span>
+                <span className="text-white">{SITE_CONFIG.hero.highlight}</span>
               </span>
             </h1>
 
