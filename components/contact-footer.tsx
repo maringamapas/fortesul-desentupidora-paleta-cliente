@@ -119,17 +119,6 @@ export function ContactFooter() {
             <div className="border-t border-primary-foreground/10 mt-10 pt-6 max-w-7xl mx-auto">
               <div className="flex flex-col items-center justify-center gap-4">
                 <p className="text-primary-foreground/60 text-xs text-center">{SITE_CONFIG.footer.copyright}</p>
-                <div className="flex items-center gap-1 text-xs justify-center">
-                  <span className="text-primary-foreground/70">Criado por</span>
-                  <a 
-                    href={SITE_CONFIG.footer.madeBy.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-secondary hover:text-secondary/80 transition-colors font-medium"
-                  >
-                    WebStudio
-                  </a>
-                </div>
               </div>
             </div>
           </div>
